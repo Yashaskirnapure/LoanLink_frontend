@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+*{
+    box-sizing: border-box;
+}
+.content{
+    background-image: linear-gradient(to top, #311432, #743177);
+    padding: 30px;
+}
+
+.tuple{
+    display: flex;
+    margin: 30px 10px;
+}
+
+.tuple > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 20px 10px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image > img{
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 8px 8px 5px  #2b122c;
+}
+
+.tuple-heading{
+    font-size: 40px;
+    margin: 20px;
+    padding: 10px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    font-style: italic;
+}
+
+.text{
+    width: 100%;
+    font-size: 15px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    text-align: center;
+}
+
+.wrapper{
+    opacity: 55%;
+}

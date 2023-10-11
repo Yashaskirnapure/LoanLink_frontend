@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+.FAQ{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.slide.selected{
+    display: flex;
+    align-items: center;
+}
+.carousel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cr-item{
+    width:  50vw;
+    background-color: #702e72;
+    border-radius: 30px;
+    padding: 40px 35px;
+    max-height: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.question{
+    font-size: 25px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-style: italic;
+}
+.answer {
+    font-size: 13px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 27px;
+    font-style: italic;
+}
+.faq-heading{
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    padding: 50px;
+    color: white;
+}

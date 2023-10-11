@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.footer{
+    background-color: #250f25;
+    color: white;
+    height: 300px;
+    max-height: 500px;
+    text-align: center;
+}
+.footer-heading{
+    padding: 30px;
+    font-size: 105px;
+    font-family: 'Staatliches', cursive;
+}
+.section{
+    font-family: 'Playfair Display', serif;
+}
