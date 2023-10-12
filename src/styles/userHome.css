@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+.user-home{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../public/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background-tint {
+    background-color: #512153;
+    background-blend-mode: multiply;
+}

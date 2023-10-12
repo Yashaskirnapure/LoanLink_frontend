@@ -71,7 +71,7 @@ const Signup = () => {
 
   return (
     <div>
-        <div className='form-wrapper'>
+        <div className='form-wrapper background-tint'>
             <div className='register container'>
                 <h1 className='form-heading'>Register</h1>
                 <form className='form' action="">

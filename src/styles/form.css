@@ -13,6 +13,11 @@
     background-size: cover;
 }
 
+.background-tint {
+    background-color: #512153;
+    background-blend-mode: multiply;
+}
+
 .container {
     background-color: white;
     margin: auto;

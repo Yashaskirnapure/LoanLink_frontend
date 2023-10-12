@@ -5,7 +5,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
 
+import useAuth from '../lib/useAuth'
+
 const Login = () => {
+  const { setAuth } = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -17,11 +21,33 @@ const Login = () => {
         })
       return;
     }
+
+    try {
+      const response = await axios.post(
+        /*backend api*/
+        JSON.stringify({email, password}),
+        {
+          headers: { 'Content-Type' : 'application/json'},
+          withCredentials: true
+        }
+      )
+      console.log(response.data);
+      toast.success('Login Successful', {
+        position: toast.POSITION.TOP_RIGHT
+      })
+      {/*localStorage.setItem('user', JSON.stringify())*/}
+    } catch (err) {
+      toast.error('Login Failed', {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    }
+    setEmail('')
+    setPassword('')
   }
 
   return (
     <div>
-      <div className='form-wrapper'>
+      <div className='form-wrapper background-tint'>
         <div className='login container'>
           <h1 className='form-heading'>Login</h1>
           <form className='form' action="">
