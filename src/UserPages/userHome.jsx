@@ -2,15 +2,21 @@ import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import { Text, Stack, VStack, StackDivider } from '@chakra-ui/react'
 import { Heading } from '@chakra-ui/react'
-import { Box, Image } from '@chakra-ui/react'
+import { Box} from '@chakra-ui/react'
 import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import { SimpleGrid } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import '../styles/userHome.css'
 
 const UserHome = () => {
   {/*const user = localStorage.getItem('user')*/}
+
+  const logout = (e) => {
+    {/*localStorage.removeItem('user')*/}
+    console.log("logout")
+  }
+
   return (
     <div className='user-home background-tint'>
       <SimpleGrid 
@@ -62,7 +68,7 @@ const UserHome = () => {
         </CardBody>
         <CardFooter>
           <Link to={'/login'}>
-            <Button>Logout</Button>
+            <Button onClickCapture={logout}>Logout</Button>
           </Link>
         </CardFooter>
       </Card>

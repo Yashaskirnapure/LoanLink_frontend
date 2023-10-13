@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+.list-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+.go-back{
+    
+}
+.loans-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
