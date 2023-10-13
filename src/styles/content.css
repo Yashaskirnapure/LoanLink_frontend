@@ -45,7 +45,10 @@
     letter-spacing: 2.5px;
     font-style: italic;
 }
-
+.yellow{
+    color: #f4b028;
+    font-size: 50px;
+}
 .text{
     width: 100%;
     font-size: 15px;
@@ -57,4 +60,18 @@
 
 .wrapper{
     opacity: 55%;
+}
+
+.tuple {
+    animation: slide-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }

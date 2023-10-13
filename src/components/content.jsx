@@ -14,13 +14,13 @@ function Content() {
                 </div>
             </div>
             <div>
-                <h3 className='tuple-heading first'>Get Loans at Low Rate of Interest</h3>
+                <h3 className='tuple-heading first'>Get Loans at <span className='yellow'>Low Rate</span> of Interest</h3>
                 <p className='text'>LoanLink eliminates the possibility of having a middleman in the lending process     and hence no extra commisions.</p>
             </div>
         </div>
         <div className='tuple'>
             <div>
-                <h3 className='tuple-heading second'>Security first and Second</h3>
+                <h3 className='tuple-heading second'><span className='yellow'>Security</span> first and Second</h3>
                 <p className='text'>
                     LoanLink ensures that all your personal data and transactions are encrypted and secured so whats yours remains yours.
                 </p>
