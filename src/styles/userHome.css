@@ -3,6 +3,17 @@
     margin: 0px;
     padding: 0px;
 }
+.wallpaper{
+    background-image: url('../public/home.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.dark-tint {
+    background-color: rgba(0, 0, 0, 0.753);
+    background-blend-mode: multiply;
+}
 .home-wrapper{
     height: 100vh;
     margin-top: 60px;
@@ -21,7 +32,15 @@
     align-items: center;
 }
 .loan-card{
+    width: 90%;
+    height: 53%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.status-bar{
+    height: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

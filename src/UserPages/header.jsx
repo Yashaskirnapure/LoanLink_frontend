@@ -10,7 +10,11 @@ const Header = () => {
       <div className="navigation">
         <Button className='nav-button'>Check Status</Button>
         <Button className='nav-button'>Add Listing</Button>
-        <Button className='nav-button'>Logout</Button>
+        <Button
+          className='nav-button'
+          backgroundColor={'darkred'}
+          color={'white'}
+        >Logout</Button>
       </div>
     </div>
   )

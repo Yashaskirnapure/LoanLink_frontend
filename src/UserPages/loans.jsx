@@ -44,7 +44,7 @@ const Loans = () => {
   ]);
 
   return (
-    <div className='loans-list'>
+    <div className='loans-list wallpaper dark-tint'>
       <Header />
       <SimpleGrid 
         width={'70vw'} padding={10} margin={5}

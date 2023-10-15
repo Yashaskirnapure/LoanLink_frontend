@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import { Text, Stack, VStack, StackDivider } from '@chakra-ui/react'
+import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import { Heading } from '@chakra-ui/react'
 import { Box, Image } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
@@ -18,16 +19,20 @@ const Borrower = () => {
   }
 
   return (
-    <main>
+    <main className='wallpaper dark-tint'>
       <Header/>
       <div className='home-wrapper'>
         <Card
+          backgroundColor={'black'}
+          color={'white'} 
+          className='card'
           margin={'10px'}
           height={'600px'}
-          width={'400px'}
+          width={'500px'}
           borderRadius={40}
           align={'center'}
-          borderWidth={'2px'}
+          borderWidth={'1px'}
+          opacity={'50%'}
         >
           <CardHeader>
             <Heading size='2xl'>Dashboard</Heading>
@@ -43,6 +48,7 @@ const Borrower = () => {
           </Box>
           <CardBody
             textAlign={'left'}
+            width={'400px'}
           >
             <Stack divider={<StackDivider />} spacing='4'>
               <Box>
@@ -79,12 +85,15 @@ const Borrower = () => {
           height={'600px'}
         >
           <Card
-            className='user-card'
+            backgroundColor={'black'}
+            color={'white'}
+            className='user-card card'
             margin={'auto'}
             height={'250px'}
             width={'90%'}
             borderRadius={'20px'}
-            borderWidth={'2px'}
+            opacity={'50%'}
+            borderWidth={'1px'}
           >
             <Heading
               size='xl'
@@ -105,22 +114,24 @@ const Borrower = () => {
                 marginTop={'0px'}
                 marginBottom={'0px'}
                 width={'250px'}
+                backgroundColor={'black'}
+                color={'white'}
               >
                 <CardBody>
-                  <Stack divider={<StackDivider />} spacing='2'>
+                  <Stack divider={<StackDivider />} spacing='1'>
                     <Box>
-                      <Heading size='xs' textTransform='uppercase'>
+                      <Heading size='xm' textTransform='uppercase'>
                         Credit Score
                       </Heading>
-                      <Text pt='2' fontSize='sm'>
+                      <Text pt='2' fontSize='md'>
                         300
                       </Text>
                     </Box>
                     <Box>
-                      <Heading size='xs' textTransform='uppercase'>
+                      <Heading size='xm' textTransform='uppercase'>
                         payment history
                       </Heading>
-                      <Text pt='2' fontSize='sm'>
+                      <Text pt='2' fontSize='md'>
                         95%
                       </Text>
                     </Box>
@@ -129,34 +140,55 @@ const Borrower = () => {
               </Card>
             </div>
           </Card>
-          <Card
-            className='user-card'
-            borderRadius={'20px'}
-            height={'300px'}
-            margin={'auto'}
-            width={'90%'}
-            borderWidth={'2px'}
-          >
-            <Heading
-              size='xl'
-            >
-              Loan Status
-            </Heading>
             <div className='loan-card'>
-                <Card width={'48%'}>
+                <Card
+                      backgroundColor={'black'}
+                      color={'white'} 
+                      borderRadius={'30px'}
+                      width={'47%'}
+                      height={'98%'}
+                      opacity={'50%'}
+                      borderWidth={'1px'}
+                >
                   <CardHeader>
-                    <Heading size='sm'> Customer dashboard</Heading>
+                    <Heading 
+                      size='md'
+                      textAlign={'center'}
+                    >
+                      Loan Status
+                    </Heading>
                   </CardHeader>
-                  <CardBody>
-                    <Text>View summary.</Text>
+                  <CardBody className='status-bar'>
+                    <CircularProgress
+                      value={80}
+                      size={'135px'}
+                      color='green'
+                    >
+                      <CircularProgressLabel>
+                        80%
+                      </CircularProgressLabel>
+                    </CircularProgress>
                   </CardBody>
                   <CardFooter>
                     <Button>View here</Button>
                   </CardFooter>
                 </Card>
-                <Card width={'48%'}>
+                <Card
+                    backgroundColor={'black'}
+                    color={'white'}
+                    width={'47%'}
+                    height={'98%'}
+                    borderRadius={'30px'}
+                    opacity={'50%'}
+                    borderWidth={'1px'}
+                >
                   <CardHeader>
-                    <Heading size='sm'> Customer dashboard</Heading>
+                    <Heading
+                      size='md'
+                      textAlign={'center'}
+                    >
+                      Add Loan Listing
+                    </Heading>
                   </CardHeader>
                   <CardBody>
                     <Text>View summary</Text>
@@ -166,7 +198,6 @@ const Borrower = () => {
                   </CardFooter>
                 </Card>
             </div>
-          </Card>
         </VStack>
       </div>
     </main>
