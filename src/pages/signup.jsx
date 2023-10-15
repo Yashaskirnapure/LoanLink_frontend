@@ -11,6 +11,7 @@ const Signup = () => {
   const [fullname, setFullname] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [role, setRole] = useState('');
 
   const handeSubmit = async (e) => {
     e.preventDefault();
@@ -95,6 +96,18 @@ const Signup = () => {
                         placeholder='Confirm Password'
                         onChange={(e) => {setConfirmPassword(e.target.value)}}
                     />
+                    <div className='role'
+                        onChange={(e) => {setRole(e.target.value)}}
+                    >
+                        <div>
+                            <input type="radio" value="lender" name="role" />
+                            <span> Lender </span>
+                        </div>
+                        <div>
+                            <input type="radio" value="borrower" name="role" />
+                            <span> Borrower </span>
+                        </div>
+                    </div>
                     <button
                         className='submit-button'
                         onClick={handeSubmit}

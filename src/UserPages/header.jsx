@@ -6,10 +6,12 @@ import { Button, Heading } from '@chakra-ui/react'
 const Header = () => {
   return (
     <div className='header'>
-        <ul className='header-items'>
-          <Button>Go Back</Button>
-          Available Loans
-        </ul>
+      <div className='logo'></div>
+      <div className="navigation">
+        <Button className='nav-button'>Check Status</Button>
+        <Button className='nav-button'>Add Listing</Button>
+        <Button className='nav-button'>Logout</Button>
+      </div>
     </div>
   )
 }

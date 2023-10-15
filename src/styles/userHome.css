@@ -1,15 +1,27 @@
 *{
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
-.user-home{
-    width: 100vw;
+.home-wrapper{
     height: 100vh;
-    background-image: url('../public/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.background-tint {
-    background-color: #512153;
-    background-blend-mode: multiply;
+.user-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.report{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.loan-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

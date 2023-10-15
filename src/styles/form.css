@@ -36,7 +36,7 @@
 }
 
 .register {
-    height: 80vh;
+    height: 85vh;
 }
 
 .form{
@@ -88,10 +88,21 @@
     padding: 10px;
 }
 
+.role{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.role > div > span{
+    padding: 0px 7px;
+}
+
 @media only screen and (max-width: 600px) {
     .container {
         min-width: 270px;
-        max-height: 400px;
+        max-height: 450px;
     }
     .form {
         min-width: 270px;

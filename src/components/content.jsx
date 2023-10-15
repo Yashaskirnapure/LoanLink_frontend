@@ -9,17 +9,17 @@ function Content() {
     <section className='content' id='content'>
         <div className='tuple'>
             <div className='wrapper'>
-                <div className='image'>
+                <div className='image animated'>
                     <img src={one} alt="" />
                 </div>
             </div>
-            <div>
+            <div className='right animated'>
                 <h3 className='tuple-heading first'>Get Loans at <span className='yellow'>Low Rate</span> of Interest</h3>
                 <p className='text'>LoanLink eliminates the possibility of having a middleman in the lending process     and hence no extra commisions.</p>
             </div>
         </div>
         <div className='tuple'>
-            <div>
+            <div className='animated'>
                 <h3 className='tuple-heading second'><span className='yellow'>Security</span> first and Second</h3>
                 <p className='text'>
                     LoanLink ensures that all your personal data and transactions are encrypted and secured so whats yours remains yours.
@@ -29,7 +29,7 @@ function Content() {
                 </p>
             </div>
             <div className='wrapper'>
-                <div className='image'>
+                <div className='image animated'>
                     <img src={two} alt="" />
                 </div>
             </div>

@@ -6,9 +6,10 @@ const LoanListing = ({ listing }) => {
     <Box 
       padding={5}
       width={'100%'}
-      backgroundColor={'lightblue'}
       height={'170px'}
+      backgroundColor={'white'}
       borderRadius={'30px'}
+      borderWidth={'2px'}
     >
       <Text>{listing.title}</Text>
       <Text>{listing.description}</Text>

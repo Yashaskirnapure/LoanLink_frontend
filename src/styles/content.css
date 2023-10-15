@@ -62,16 +62,15 @@
     opacity: 55%;
 }
 
-.tuple {
-    animation: slide-in 0.5s ease-in-out;
+.animated {
+    animation: fade-in 0.8s ease-in-out 0.5s;
 }
-
-@keyframes slide-in {
+@keyframes fade-in {
     from {
-        transform: translateX(-50%);
+        opacity: 0;
     }
 
     to {
-        transform: translateX(0);
+        opacity: 1;
     }
 }

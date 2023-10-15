@@ -12,6 +12,7 @@ const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('')
 
   const handeSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +32,9 @@ const Login = () => {
           withCredentials: true
         }
       )
+
       console.log(response.data);
+      console.log(response.accessToken);
       toast.success('Login Successful', {
         position: toast.POSITION.TOP_RIGHT
       })
@@ -63,6 +66,18 @@ const Login = () => {
               className='single-input'
               onChange={(e) => setPassword(e.target.value)}
             />
+            <div className='role'
+                onChange={(e) => {setRole(e.target.value)}}
+            >
+                <div>
+                    <input type="radio" value="lender" name="role" />
+                    <span> Lender </span>
+                </div>
+                <div>
+                    <input type="radio" value="borrower" name="role" />
+                    <span> Borrower </span>
+                </div>
+            </div>
             <button 
               className='submit-button'
               onClick={handeSubmit}
