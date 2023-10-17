@@ -4,8 +4,6 @@ import { SimpleGrid, Heading } from '@chakra-ui/react';
 import LoanListing from './loanlisting';
 import { useState } from 'react';
 import '../styles/loans.css'
-import { IconButton } from '@chakra-ui/react';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
 import Header from './header';
 
 const Loans = () => {
@@ -46,17 +44,16 @@ const Loans = () => {
   return (
     <div className='loans-list wallpaper dark-tint'>
       <Header />
-      <SimpleGrid 
-        width={'70vw'} padding={10} margin={5}
-        columns={1} spacing={4}
-        alignContent={'center'}>
+      <div className="listing">
         {loanList.map((item) => {
-            return (<LoanListing
+            return (
+            <LoanListing
               listing={item}
               key={item.id}
-            />)
+            />
+          )
         })}
-      </SimpleGrid>
+      </div>
     </div>
   )
 }

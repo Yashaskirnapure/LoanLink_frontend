@@ -6,7 +6,9 @@ import { Heading } from '@chakra-ui/react'
 import { Box, Image } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import Header from './header'
-import SemiCircleProgressBar from "react-progressbar-semicircle";
+import { SemiCircleProgress } from 'react-semicircle-progressbar';
+import { Link } from 'react-router-dom'
+
 import '../styles/userHome.css'
 import profilePic from '../public/profile.png'
 
@@ -35,16 +37,23 @@ const Borrower = () => {
           opacity={'50%'}
         >
           <CardHeader>
-            <Heading size='2xl'>Dashboard</Heading>
+            <Heading
+              size='2xl'
+              marginBottom={'20px'}
+            >
+              Dashboard
+            </Heading>
           </CardHeader>
           <Box
             boxSize='sm'
             align={'center'}
           >
-            <Image 
+            <Image
+              boxSize='150px'
               borderRadius={'50%'}
               src={profilePic} 
-              alt='my-pfp' />
+              alt='my-pfp'
+            />
           </Box>
           <CardBody
             textAlign={'left'}
@@ -102,12 +111,14 @@ const Borrower = () => {
               Your Credit Report
             </Heading>
             <div className="report">
-              <SemiCircleProgressBar
-                stroke={'blue'}
-                strokeWidth={'15'}
-                percentage={33}
-                diameter={200}
-                padding={'10px'}
+              <SemiCircleProgress
+                percentage={80}
+                size={{
+                  width: 200,
+                  height: 200,
+                }}
+                strokeWidth={10}
+                strokeColor="blue"
               />
               <Card
                 margin={'15px'}
@@ -194,7 +205,9 @@ const Borrower = () => {
                     <Text>View summary</Text>
                   </CardBody>
                   <CardFooter>
-                    <Button>View here</Button>
+                    <Link to={'/add'}>
+                      <Button>View here</Button>
+                    </Link>
                   </CardFooter>
                 </Card>
             </div>
