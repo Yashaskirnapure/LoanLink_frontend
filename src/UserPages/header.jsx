@@ -8,8 +8,12 @@ const Header = () => {
     <div className='header'>
       <div className='logo'></div>
       <div className="navigation">
+        <Button className='nav-button'>Dashboard</Button>
         <Button className='nav-button'>Check Status</Button>
-        <Button className='nav-button'>Add Listing</Button>
+        <Button
+          className='nav-button'
+          fontSize={'14'}
+        >Add/Browse Loan</Button>
         <Button
           className='nav-button'
           backgroundColor={'darkred'}

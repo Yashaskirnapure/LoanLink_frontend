@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 import '../styles/userHome.css'
 import profilePic from '../public/profile.png'
 
-const Borrower = () => {
+const Lender = () => {
   {/*const user = localStorage.getItem('user')*/}
 
   const logout = (e) => {
@@ -81,7 +81,7 @@ const Borrower = () => {
                   Role
                 </Heading>
                 <Text pt='2' fontSize='2xl'>
-                  Borrower
+                  Lender
                 </Text>
               </Box>
             </Stack>
@@ -153,13 +153,13 @@ const Borrower = () => {
           </Card>
             <div className='loan-card'>
                 <Card
-                  backgroundColor={'black'}
-                  color={'white'} 
-                  borderRadius={'30px'}
-                  width={'47%'}
-                  height={'98%'}
-                  opacity={'50%'}
-                  borderWidth={'1px'}
+                      backgroundColor={'black'}
+                      color={'white'} 
+                      borderRadius={'30px'}
+                      width={'47%'}
+                      height={'98%'}
+                      opacity={'50%'}
+                      borderWidth={'1px'}
                 >
                   <CardHeader>
                     <Heading 
@@ -198,14 +198,14 @@ const Borrower = () => {
                       size='md'
                       textAlign={'center'}
                     >
-                      Add Loan Listing
+                      Browse Loan Listings
                     </Heading>
                   </CardHeader>
                   <CardBody>
-                    <Text>Provide details of the loan and add a listing.</Text>
+                    <Text>View list of loans available for funding.</Text>
                   </CardBody>
                   <CardFooter>
-                    <Link to={'/add'}>
+                    <Link to={'/list'}>
                       <Button>View here</Button>
                     </Link>
                   </CardFooter>
@@ -217,4 +217,4 @@ const Borrower = () => {
   )
 }
 
-export default Borrower
+export default Lender

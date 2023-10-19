@@ -4,6 +4,7 @@ import Home from './pages/home';
 import Login from './pages/login'
 import Signup from './pages/signup';
 import Borrower from './UserPages/borrower';
+import Lender from './UserPages/lender';
 import Loans from './UserPages/loans';
 import Status from './UserPages/status';
 
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/list' element={<Loans />}/>
                 <Route path='/status' element={<Status />}/>
                 <Route path='/add' element={ <Addlisting/> }/>
+                <Route path='/lender' element={ <Lender/>}/>
             {/*</Route>*/}
         </Routes>
 
