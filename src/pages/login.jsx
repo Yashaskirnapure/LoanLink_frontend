@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/form.css'
 import { Link } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
@@ -13,6 +14,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('')
+  const navigate = useNavigate();
 
   const handeSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +28,7 @@ const Login = () => {
     try {
       const response = await axios.post(
         /*backend api*/
-        JSON.stringify({email, password}),
-        {
+        JSON.stringify({email, password, role}),{
           headers: { 'Content-Type' : 'application/json'},
           withCredentials: true
         }
@@ -38,7 +39,12 @@ const Login = () => {
       toast.success('Login Successful', {
         position: toast.POSITION.TOP_RIGHT
       })
-      {/*localStorage.setItem('user', JSON.stringify())*/}
+      {/*sessionStorage.setItem('user', JSON.stringify())*/}
+      if (role === "lender") {
+        navigate("/lender");
+      } else if (role === "borrower") {
+        navigate("/borrower");
+      }
     } catch (err) {
       toast.error('Login Failed', {
         position: toast.POSITION.TOP_RIGHT

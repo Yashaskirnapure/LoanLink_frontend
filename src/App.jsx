@@ -25,6 +25,7 @@ function App() {
                 <Route path='/status' element={<Status />}/>
                 <Route path='/add' element={ <Addlisting/> }/>
                 <Route path='/lender' element={ <Lender/>}/>
+                <Route path='/borrower' element={ <Borrower/>}/>
             {/*</Route>*/}
         </Routes>
 
