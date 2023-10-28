@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {
   Field,
   FormControl,
@@ -20,19 +21,50 @@ import { useState } from "react";
 import { Text } from '@chakra-ui/react';
 import { Heading } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import '../styles/addform.css'
 import Header from './header';
 
 const Addlisting = () => {
   const [ title, setTitle ] = useState('')
   const [ amount, setAmount ] = useState(0)
-  const [ term, setTerm ] = useState('')
-  const [ interest, setInterest ] = useState(0)
+  const [ term, setTerm ] = useState(1)
+  const [ interest, setInterest ] = useState(1)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('clicked')
-    console.log(title, amount, term, interest);
+    console.log("clicked")
+    if(title === ''){
+      toast.error('Please provide title!!', {
+        position: toast.POSITION.TOP_LEFT
+      })
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        /*backend api*/
+        JSON.stringify({title, amount, term, interest}),{
+          headers: { 'Content-Type' : 'application/json'},
+          withCredentials: true
+        }
+      )
+
+      console.log(response.data);
+      console.log(response.accessToken);
+      toast.success('Login Successful', {
+        position: toast.POSITION.TOP_LEFT
+      })
+    } catch (err) {
+      toast.error('Login Failed', {
+        position: toast.POSITION.TOP_LEFT
+      })
+    }
+    setTitle('')
+    setAmount(0)
+    setInterest(0)
+    setTerm(0)
   }
 
   return (
@@ -48,7 +80,7 @@ const Addlisting = () => {
             >
 
 
-              
+
                 <Heading
                   textAlign={'center'}
                   marginBottom={'20px'}
@@ -93,8 +125,8 @@ const Addlisting = () => {
                 <Text fontSize={'xl'}>Loan Term: </Text>
                 <InputGroup size='md'>
                   <NumberInput
-                    defaultValue={0}
-                    min={0} max={10}
+                    defaultValue={1}
+                    min={1} max={10}
                     width={'85%'}
                     marginBottom={'30px'}
                     onChange={
@@ -120,7 +152,7 @@ const Addlisting = () => {
                 <Text fontSize={'xl'}>Interest Rate: </Text>
                 <InputGroup>
                   <NumberInput
-                    defaultValue={0}
+                    defaultValue={1}
                     min={1} max={30}
                     width={'73%'}
                     marginBottom={'30px'}
@@ -154,6 +186,8 @@ const Addlisting = () => {
                   Submit
                 </Button>
             </FormControl>
+
+            <ToastContainer/>
         </div>
     </div>
   )
