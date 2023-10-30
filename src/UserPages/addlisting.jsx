@@ -24,7 +24,7 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import '../styles/addform.css'
-import Header from './header';
+import Header from './borrower_header';
 
 const Addlisting = () => {
   const [ title, setTitle ] = useState('')
@@ -74,7 +74,7 @@ const Addlisting = () => {
             <FormControl
                 borderRadius={'30px'}
                 backgroundColor={'white'}
-                width={'600px'}
+                width={'45vw'}
                 padding={'30px'}
                 margin={'30px'}
             >
@@ -90,7 +90,7 @@ const Addlisting = () => {
 
 
 
-                <Text fontSize={'xl'}>Loan title: </Text>
+                <Text fontSize={'1.4rem'}>Loan title: </Text>
                 <Input 
                   type='text'
                   marginBottom={'30px'}
@@ -101,7 +101,7 @@ const Addlisting = () => {
 
 
                 
-                <Text fontSize={'xl'}>Loan Amount: </Text>
+                <Text fontSize={'1.4rem'}>Loan Amount: </Text>
                 <NumberInput
                   step={100}
                   defaultValue={0}
@@ -122,7 +122,7 @@ const Addlisting = () => {
 
 
 
-                <Text fontSize={'xl'}>Loan Term: </Text>
+                <Text fontSize={'1.4rem'}>Loan Term: </Text>
                 <InputGroup size='md'>
                   <NumberInput
                     defaultValue={1}
@@ -149,7 +149,7 @@ const Addlisting = () => {
 
 
 
-                <Text fontSize={'xl'}>Interest Rate: </Text>
+                <Text fontSize={'1.4rem'}>Interest Rate: </Text>
                 <InputGroup>
                   <NumberInput
                     defaultValue={1}

@@ -4,7 +4,7 @@ import { SimpleGrid, Heading } from '@chakra-ui/react';
 import LoanListing from './loanlisting';
 import { useState } from 'react';
 import '../styles/loans.css'
-import Header from './header';
+import Header from './lender_header';
 
 const Loans = () => {
 
@@ -33,11 +33,6 @@ const Loans = () => {
       id: 2,
       title: 'Business Loan',
       description: 'A business loan can be used to start a new business, expand an existing business, or purchase equipment.',
-    },
-    {
-      id: 3,
-      title: 'Student Loan',
-      description: 'A student loan can be used to pay for tuition, fees, and other expenses associated with college or university.',
     }
   ]);
 
