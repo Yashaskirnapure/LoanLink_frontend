@@ -8,20 +8,18 @@ const Header = () => {
     <div className='header'>
       <div className='logo'></div>
       <div className="navigation">
-        <Button className='nav-button'>
+        <a className='nav-button'>
           <Link to={'/borrower'}>Dashboard</Link>
-        </Button>
-        <Button className='nav-button'>
+        </a>
+        <a className='nav-button'>
           <Link to={'/borrowerstatus'}>Check Status</Link>
-        </Button>
-        <Button className='nav-button'>
-            <Link to={'/add'}>Add Loan</Link>
-        </Button>
-        <Button
-          className='nav-button'
-          backgroundColor={'darkred'}
-          color={'white'}
-        >Logout</Button>
+        </a>
+        <a className='nav-button'>
+            <Link to={'/add'}>Browse Loan</Link>
+        </a>
+        <a className='nav-button logout'>
+          Logout
+        </a>
       </div>
     </div>
   )

@@ -12,27 +12,30 @@ const Loans = () => {
     {
       id: 1,
       title: 'Personal Loan',
-      description: 'A personal loan can be used for any purpose, such as debt consolidation, home improvement, or unexpected expenses.',
+      borrower: 'Yashas',
+      amount: 1000,
+      term: '36 days'
     },
     {
       id: 2,
-      title: 'Business Loan',
-      description: 'A business loan can be used to start a new business, expand an existing business, or purchase equipment.',
+      title: 'Educational Loan',
+      borrower: 'Yashas',
+      amount: 1000,
+      term: '36 days'
     },
     {
       id: 3,
-      title: 'Student Loan',
-      description: 'A student loan can be used to pay for tuition, fees, and other expenses associated with college or university.',
-    },
-    {
-      id: 1,
       title: 'Personal Loan',
-      description: 'A personal loan can be used for any purpose, such as debt consolidation, home improvement, or unexpected expenses.',
+      borrower: 'Yashas',
+      amount: 1000,
+      term: '36 days'
     },
     {
-      id: 2,
-      title: 'Business Loan',
-      description: 'A business loan can be used to start a new business, expand an existing business, or purchase equipment.',
+      id: 4,
+      title: 'Educational Loan',
+      borrower: 'Yashas',
+      amount: 1000,
+      term: '36 days'
     }
   ]);
 
