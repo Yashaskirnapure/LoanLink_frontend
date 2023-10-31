@@ -21,12 +21,13 @@ import { useState } from "react";
 import { Text } from '@chakra-ui/react';
 import { Heading } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
-import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import '../styles/addform.css'
 import Header from './borrower_header';
+import { useToast } from '@chakra-ui/react'
 
 const Addlisting = () => {
+  const toast = useToast()
   const [ title, setTitle ] = useState('')
   const [ amount, setAmount ] = useState(0)
   const [ term, setTerm ] = useState(1)
@@ -36,8 +37,12 @@ const Addlisting = () => {
     e.preventDefault();
     console.log("clicked")
     if(title === ''){
-      toast.error('Please provide title!!', {
-        position: toast.POSITION.TOP_LEFT
+      toast({
+          title: 'Error',
+          description: "Please input all fields.",
+          status: 'error',
+          duration: 4000,
+          isClosable: true,
       })
       return;
     }
@@ -187,8 +192,6 @@ const Addlisting = () => {
                   Submit
                 </Button>
             </FormControl>
-
-            <ToastContainer/>
         </div>
     </div>
   )

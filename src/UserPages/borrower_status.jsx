@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { Heading, Stack, Box, Text, StackDivider } from '@chakra-ui/react'
 import '../styles/status.css'
-import { Progress } from '@chakra-ui/react'
+import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 
 const BorrowerStatus = () => {
   return (
@@ -19,8 +19,17 @@ const BorrowerStatus = () => {
               <CardHeader>
                 <Heading size='xl' textAlign={'center'}>Loan Status</Heading>
               </CardHeader>
+              <Box margin={'auto'}>
+                <CircularProgress 
+                  value={40}
+                  color='green.400'
+                  size='150px'
+                >
+                  <CircularProgressLabel>40%</CircularProgressLabel>
+                </CircularProgress>
+              </Box>
               <CardBody>
-                <Stack divider={<StackDivider />} spacing='2'>
+                <Stack divider={<StackDivider />} spacing='3'>
                   <Box>
                     <Heading size='xs' textTransform='uppercase'>
                       Lender Name
@@ -60,11 +69,6 @@ const BorrowerStatus = () => {
                     >
                       Amount left to be replayed
                     </Heading>
-                    <Box
-                      padding={'20px'}
-                    >
-                      <Progress value={80}/>
-                    </Box>
                     <Text pt='2' fontSize='sm'>
                       300
                     </Text>

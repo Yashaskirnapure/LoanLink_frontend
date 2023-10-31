@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import '../styles/form.css'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
-
+import { useToast } from '@chakra-ui/react'
 import useAuth from '../lib/useAuth'
 
 const Login = () => {
   const { setAuth } = useAuth();
-
+  const toast = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('')
@@ -18,10 +17,14 @@ const Login = () => {
 
   const handeSubmit = async (e) => {
     e.preventDefault();
-    if(email === '' || password === ''){
-        toast.error('Please input all fields!!', {
-          position: toast.POSITION.TOP_RIGHT
-        })
+    if(email === '' || password === '' || role == ''){
+      toast({
+        title: 'Error.',
+        description: "Please input all fields.",
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+      })
       return;
     }
 
@@ -36,8 +39,11 @@ const Login = () => {
 
       console.log(response.data);
       console.log(response.accessToken);
-      toast.success('Login Successful', {
-        position: toast.POSITION.TOP_RIGHT
+      toast({
+        title: 'Login Successful.',
+        status: 'success',
+        duration: 4000,
+        isClosable: true,
       })
       {/*sessionStorage.setItem('user', JSON.stringify())*/}
       if (role === "lender") {
@@ -46,8 +52,12 @@ const Login = () => {
         navigate("/borrower");
       }
     } catch (err) {
-      toast.error('Login Failed', {
-        position: toast.POSITION.TOP_RIGHT
+      toast({
+        title: 'Error',
+        description: "Something went wrong. Please try again.",
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
       })
     }
     setEmail('')
@@ -98,7 +108,6 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <ToastContainer/>
     </div>
   )
 }

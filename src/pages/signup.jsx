@@ -2,11 +2,12 @@ import React from 'react'
 import '../styles/form.css'
 import { Link } from "react-router-dom"
 import { useState } from 'react'
-import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
+import { useToast } from '@chakra-ui/react'
 
 const Signup = () => {
+  const toast = useToast()  
   const [email, setEmail] = useState('');
   const [fullname, setFullname] = useState('');
   const [password, setPassword] = useState('');
@@ -16,30 +17,46 @@ const Signup = () => {
   const handeSubmit = async (e) => {
     e.preventDefault();
     if(email === '' || password === '' || fullname === '' || confirmPassword === ''){
-       toast.error('Please input all fields!!', {
-            position: toast.POSITION.TOP_RIGHT
+        toast({
+            title: 'Error',
+            description: "Please input all fields.",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
         })
        return;
     }
     if(password !== confirmPassword){
-        toast.error('Passwords do not match!!', {
-          position: toast.POSITION.TOP_RIGHT
+        toast({
+            title: 'Error',
+            description: 'Passwords do not match!!',
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
         })
         return;
     }
 
     const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!EMAIL_REGEX.test(email)){
-        toast.error('Please enter valid Email id!!', {
-          position: toast.POSITION.TOP_RIGHT
+        toast({
+            title: 'Error',
+            description: 'Please enter valid Email id!!',
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
         })
         return;
     }
 
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+-]).{8,}$/;
     if(!PWD_REGEX.test(email)){
-        toast.error('The passwords should be at least 8 characters long and should contain at least one lowercase letter, one uppercase letter, one digit, and one special character.', {
-          position: toast.POSITION.TOP_RIGHT
+        toast({
+            title: 'Error.',
+            description: "The passwords should be at least 8 characters long and should contain at least one lowercase letter, one uppercase letter, one digit, and one special character.",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
         })
         return;
     }
@@ -54,12 +71,19 @@ const Signup = () => {
         )
         console.log(response.data)
         console.log(response.accessToken)
-        toast.success('Registration successful',{
-            position: toast.POSITION.TOP_RIGHT
+        toast({
+            title: 'Registration Successful',
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
         })
     } catch (err) {
-        toast.error('Something went wrong',{
-            position: toast.POSITION.TOP_RIGHT
+        toast({
+            title: 'Error',
+            description: "Something went wrong. Please try again.",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
         })
     }
 
@@ -124,7 +148,6 @@ const Signup = () => {
                 </p>
             </div>
         </div>
-        <ToastContainer />
     </div>
   )
 }
