@@ -73,7 +73,7 @@ const Addlisting = () => {
   }
 
   return (
-    <div className=''>
+    <div className='polygon'>
         <Header />
         <div className="add-form">
             <FormControl

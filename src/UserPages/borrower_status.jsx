@@ -9,7 +9,7 @@ import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 const BorrowerStatus = () => {
   return (
     <>
-      <div className=''>
+      <div className='polygon status-body'>
         <Header />
         <div className="status-page">
             <Card
@@ -22,7 +22,7 @@ const BorrowerStatus = () => {
               <Box margin={'auto'}>
                 <CircularProgress 
                   value={40}
-                  color='green.400'
+                  color='blue.400'
                   size='150px'
                 >
                   <CircularProgressLabel>40%</CircularProgressLabel>
@@ -33,14 +33,6 @@ const BorrowerStatus = () => {
                   <Box>
                     <Heading size='xs' textTransform='uppercase'>
                       Lender Name
-                    </Heading>
-                    <Text pt='2' fontSize='sm'>
-                      Yashas
-                    </Text>
-                  </Box>
-                  <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                      Borrower Name
                     </Heading>
                     <Text pt='2' fontSize='sm'>
                       Yashas

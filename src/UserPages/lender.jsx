@@ -181,7 +181,9 @@ const Lender = () => {
                     </CircularProgress>
                   </CardBody>
                   <CardFooter>
-                    <Button>View here</Button>
+                    <Link to={'/lenderstatus'}>
+                      <Button>View here</Button>
+                    </Link>
                   </CardFooter>
                 </Card>
                 <Card
