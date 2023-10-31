@@ -3,15 +3,16 @@ import Header from './lender_header'
 import { Card, CardHeader, CardBody } from '@chakra-ui/react'
 import { Heading, Stack, Box, Text, StackDivider } from '@chakra-ui/react'
 import '../styles/status.css'
+import { Progress } from '@chakra-ui/react'
 
 const LenderStatus = () => {
   return (
     <>
-      <div className='wallpaper dark-tint'>
+      <div className=''>
         <Header />
         <div className="status-page">
             <Card
-              width={'50%'}
+              width={'70%'}
               borderRadius={'30px'}
             >
               <CardHeader>
@@ -55,6 +56,11 @@ const LenderStatus = () => {
                     <Heading size='xs' textTransform='uppercase'>
                       Amount left to be replayed
                     </Heading>
+                    <Box
+                      padding={'20px'}
+                    >
+                      <Progress value={80}/>
+                    </Box>
                     <Text pt='2' fontSize='sm'>
                       300
                     </Text>

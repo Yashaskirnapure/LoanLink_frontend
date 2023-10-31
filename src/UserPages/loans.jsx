@@ -93,7 +93,9 @@ const Loans = () => {
     <div className='loans-list'>
       <Header />
       <div className="listing">
-        <Heading textAlign={'center'} margin={'20px'}>Available Loans</Heading>
+        <Heading textAlign={'center'} marginTop={'20px'}>
+          Available Loans
+        </Heading>
         <TableContainer
           marginTop={'20px'}
           borderWidth={'1px'}
