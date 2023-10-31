@@ -68,13 +68,14 @@ const Addlisting = () => {
   }
 
   return (
-    <div className='wallpaper dark-tint'>
+    <div className=''>
         <Header />
         <div className="add-form">
             <FormControl
+                borderWidth={'2px'}
                 borderRadius={'30px'}
                 backgroundColor={'white'}
-                width={'45vw'}
+                width={'50vw'}
                 padding={'30px'}
                 margin={'30px'}
             >

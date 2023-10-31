@@ -15,7 +15,7 @@ const Header = () => {
           <Link to={'/borrowerstatus'}>Check Status</Link>
         </a>
         <a className='nav-button'>
-            <Link to={'/add'}>Browse Loan</Link>
+            <Link to={'/add'}>Add Loan</Link>
         </a>
         <a className='nav-button logout'>
           Logout

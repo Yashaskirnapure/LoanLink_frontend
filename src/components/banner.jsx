@@ -3,7 +3,7 @@ import '../styles/banner.css'
 
 function Banner() {
   return (
-    <section className = 'banner background-tint'>
+    <section className = 'banner dark-tint'>
         <h1 className='heading'>
           REVOLUTIONIZE YOUR <span className='white'>LENDING</span> EXPERIENCE
         </h1>
