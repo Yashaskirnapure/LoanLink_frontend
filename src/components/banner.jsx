@@ -7,7 +7,7 @@ function Banner() {
         <h1 className='heading'>
           REVOLUTIONIZE YOUR <span className='white'>LENDING</span> EXPERIENCE
         </h1>
-        <div className='nav-button'>
+        <div className=''>
             <a href='#footer'>
               <div className='button type2'>
                 Get Started

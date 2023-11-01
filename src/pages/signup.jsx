@@ -50,7 +50,7 @@ const Signup = () => {
     }
 
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+-]).{8,}$/;
-    if(!PWD_REGEX.test(email)){
+    if(!PWD_REGEX.test(password)){
         toast({
             title: 'Error.',
             description: "The passwords should be at least 8 characters long and should contain at least one lowercase letter, one uppercase letter, one digit, and one special character.",
