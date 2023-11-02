@@ -9,7 +9,7 @@ import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 const BorrowerStatus = () => {
   return (
     <>
-      <div className='polygon status-body'>
+      <div className='status-body'>
         <Header />
         <div className="status-page">
             <Card

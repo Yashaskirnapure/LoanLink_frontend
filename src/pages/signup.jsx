@@ -5,6 +5,7 @@ import { useState } from 'react'
 import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
 import { useToast } from '@chakra-ui/react'
+import bcrypt from 'bcryptjs';
 
 const Signup = () => {
   const toast = useToast()  
@@ -12,7 +13,7 @@ const Signup = () => {
   const [fullname, setFullname] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState('');
+  const [role, setRole] = useState({radioChecked : false});
 
   const handeSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +53,7 @@ const Signup = () => {
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+-]).{8,}$/;
     if(!PWD_REGEX.test(password)){
         toast({
-            title: 'Error.',
+            title: 'Error',
             description: "The passwords should be at least 8 characters long and should contain at least one lowercase letter, one uppercase letter, one digit, and one special character.",
             status: 'error',
             duration: 4000,
@@ -61,19 +62,28 @@ const Signup = () => {
         return;
     }
 
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+
     try {
-        const response = await axios.post(
-            /*backend api*/
-            JSON.stringify({ fullname, email, password}),{
-                headers: { 'Content-Type' : 'application/json'},
-                withCredentials: true
-            }
-        )
-        console.log(response.data)
-        console.log(response.accessToken)
+        // const response = await axios.post(
+        //     /*backend api*/
+        //     JSON.stringify({ fullname, email, hash}),{
+        //         headers: { 'Content-Type' : 'application/json'},
+        //         withCredentials: true
+        //     }
+        // )
+        // console.log(response.data)
+        // console.log(response.accessToken)
+        //clear input fields after submit
+        setFullname('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setRole(null)
         toast({
             title: 'Registration Successful',
-            status: 'error',
+            status: 'success',
             duration: 4000,
             isClosable: true,
         })
@@ -86,12 +96,6 @@ const Signup = () => {
             isClosable: true,
         })
     }
-
-    //clear input fields after submit
-    setFullname('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
   }
 
   return (
@@ -103,24 +107,29 @@ const Signup = () => {
                     <input 
                         type="text"
                         placeholder='Full Name'
+                        value={fullname}
                         onChange={(e) => {setFullname(e.target.value)}}
                     />
                     <input
                         type="text"
                         placeholder='Email'
+                        value={email}
                         onChange={(e) => {setEmail(e.target.value)}}
                     />
                     <input
                         type="password"
                         placeholder='Password'
+                        value={password}
                         onChange={(e) => {setPassword(e.target.value)}}
                     />
                     <input
                         type="password"
                         placeholder='Confirm Password'
+                        value={confirmPassword}
                         onChange={(e) => {setConfirmPassword(e.target.value)}}
                     />
                     <div className='role'
+                        value={role}
                         onChange={(e) => {setRole(e.target.value)}}
                     >
                         <div>

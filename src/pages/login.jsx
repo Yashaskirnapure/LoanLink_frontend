@@ -5,19 +5,19 @@ import { useNavigate } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
 import { useToast } from '@chakra-ui/react'
-import useAuth from '../lib/useAuth'
+import bcrypt from 'bcryptjs';
 
 const Login = () => {
-  const { setAuth } = useAuth();
   const toast = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('')
+  const [role, setRole] = useState(null)
   const navigate = useNavigate();
 
   const handeSubmit = async (e) => {
     e.preventDefault();
-    if(email === '' || password === '' || role == ''){
+    console.log(email, password, role)
+    if(email === '' || password === '' || role === null){
       toast({
         title: 'Error.',
         description: "Please input all fields.",
@@ -28,10 +28,13 @@ const Login = () => {
       return;
     }
 
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+
     try {
       const response = await axios.post(
         /*backend api*/
-        JSON.stringify({email, password, role}),{
+        JSON.stringify({email, password, hash}),{
           headers: { 'Content-Type' : 'application/json'},
           withCredentials: true
         }
@@ -39,6 +42,9 @@ const Login = () => {
 
       console.log(response.data);
       console.log(response.accessToken);
+      setEmail('')
+      setPassword('')
+      setRole(null)
       toast({
         title: 'Login Successful.',
         status: 'success',
@@ -60,8 +66,6 @@ const Login = () => {
         isClosable: true,
       })
     }
-    setEmail('')
-    setPassword('')
   }
 
   return (
@@ -72,12 +76,14 @@ const Login = () => {
           <form className='form' action="">
             <input
               type="text"
+              value={email}
               placeholder='Email'
               className='single-input'
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
+              value={password}
               placeholder='Password'
               className='single-input'
               onChange={(e) => setPassword(e.target.value)}

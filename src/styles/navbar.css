@@ -17,6 +17,13 @@ a{
     display: flex;
     justify-content: flex-end;
 }
+.logo{
+    margin-right: auto;
+}
+.logo > img{
+    height: 50px;
+    width: auto;
+}
 
 .list-item{
     color: white;
