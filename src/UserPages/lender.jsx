@@ -24,16 +24,16 @@ const Lender = () => {
     <main className='wallpaper dark-tint'>
       <Header/>
       <div className='home-wrapper'>
+        {/*dashboard*/}
         <Card
           backgroundColor={'black'}
           color={'white'} 
           className='card'
           margin={'10px'}
-          height={'600px'}
-          width={'500px'}
+          h={[450, 550, 600]}
+          w={[400, 500, 600]}
           borderRadius={40}
           align={'center'}
-          borderWidth={'1px'}
           opacity={'50%'}
         >
           <CardHeader>
@@ -48,18 +48,29 @@ const Lender = () => {
             boxSize='sm'
             align={'center'}
           >
+
+
+
+            {/*profile pic*/}
             <Image
-              boxSize='150px'
+              boxSize={[100, 170, 200]}
               borderRadius={'50%'}
               src={profilePic} 
               alt='my-pfp'
             />
           </Box>
+
+
+          {/*profile info*/}
           <CardBody
             textAlign={'left'}
-            width={'400px'}
+            w={[250, 350, 450]}
           >
-            <Stack divider={<StackDivider />} spacing='4'>
+            <Stack
+              divider={<StackDivider />}
+              spacing='4'
+              w={'auto'}
+            >
               <Box>
                 <Heading size='xs' textTransform='uppercase'>
                   Fullname
@@ -87,12 +98,20 @@ const Lender = () => {
             </Stack>
           </CardBody>
         </Card>
+
+
+
+        {/*second column*/}
         <VStack
           className='card-stack'
           margin={'10px'}
-          width={'600px'}
+          w={[300, 500, 600]}
           height={'600px'}
         >
+
+
+
+          {/*credit report card*/}
           <Card
             backgroundColor={'black'}
             color={'white'}
@@ -114,8 +133,8 @@ const Lender = () => {
               <SemiCircleProgress
                 percentage={80}
                 size={{
-                  width: 200,
-                  height: 200,
+                  width: 150,
+                  height: 150,
                 }}
                 strokeWidth={10}
                 strokeColor="blue"
@@ -150,6 +169,9 @@ const Lender = () => {
                 </CardBody>
               </Card>
             </div>
+
+
+          {/*loan related cards*/}
           </Card>
             <div className='loan-card'>
                 <Card

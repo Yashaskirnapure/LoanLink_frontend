@@ -10,7 +10,7 @@ function FAQ() {
       <h1 className="faq-heading">FREQUENTLY ASKED QUESTIONS</h1>
       <Carousel 
         className="carousel"
-        showArrows={false}
+        showArrows={true}
         stopOnHover={true}
         showThumbs={false}
         showStatus={false}

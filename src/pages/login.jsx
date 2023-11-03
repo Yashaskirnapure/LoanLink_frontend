@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from '../api/axios';
 import { useToast } from '@chakra-ui/react'
 import bcrypt from 'bcryptjs';
+import logo from '../public/loanlink-logo-zip-file (1)/png/logo-no-background.png'
 
 const Login = () => {
   const toast = useToast();

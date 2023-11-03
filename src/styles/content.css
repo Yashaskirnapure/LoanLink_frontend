@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .content{
-    background-image: linear-gradient(to top, #311432, #743177);
+    background-image: linear-gradient(to bottom, #160916, #3b1a3d);
     padding: 30px;
 }
 

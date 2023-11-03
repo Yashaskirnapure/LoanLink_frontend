@@ -23,7 +23,7 @@
 }
 .cr-item{
     width:  50vw;
-    background-color: #702e72;
+    background-color: #e1b0e2;
     border-radius: 30px;
     padding: 40px 35px;
     max-height: 300px;
@@ -36,15 +36,15 @@
 .question{
     font-size: 25px;
     font-family: 'Playfair Display', serif;
-    color: white;
+    color: black;
     margin-bottom: 20px;
     font-weight: 800;
     font-style: italic;
 }
 .answer {
-    font-size: 13px;
+    font-size: 15px;
     font-family: 'Playfair Display', serif;
-    color: white;
+    color: black;
     letter-spacing: 1px;
     line-height: 27px;
     font-style: italic;

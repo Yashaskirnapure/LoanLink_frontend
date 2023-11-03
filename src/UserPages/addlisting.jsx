@@ -35,7 +35,7 @@ const Addlisting = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("clicked")
+    console.log(title, term, amount, interest)
     if(title === ''){
       toast({
           title: 'Error',
@@ -58,12 +58,19 @@ const Addlisting = () => {
 
       console.log(response.data);
       console.log(response.accessToken);
-      toast.success('Login Successful', {
-        position: toast.POSITION.TOP_LEFT
+      toast({
+          title: 'Loan added successfully.',
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
       })
     } catch (err) {
-      toast.error('Login Failed', {
-        position: toast.POSITION.TOP_LEFT
+      toast({
+          title: 'Error',
+          description: "Something went wrong. Please try again.",
+          status: 'error',
+          duration: 4000,
+          isClosable: true,
       })
     }
     setTitle('')
@@ -86,14 +93,12 @@ const Addlisting = () => {
             >
 
 
-
                 <Heading
                   textAlign={'center'}
                   marginBottom={'20px'}
                 >
                   Loan Details
                 </Heading>
-
 
 
                 <Text fontSize={'1.4rem'}>Loan title: </Text>
