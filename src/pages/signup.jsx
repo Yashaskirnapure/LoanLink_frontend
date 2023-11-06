@@ -66,15 +66,15 @@ const Signup = () => {
     const hash = bcrypt.hashSync(password, salt);
 
     try {
-        // const response = await axios.post(
-        //     /*backend api*/
-        //     JSON.stringify({ fullname, email, hash}),{
-        //         headers: { 'Content-Type' : 'application/json'},
-        //         withCredentials: true
-        //     }
-        // )
-        // console.log(response.data)
-        // console.log(response.accessToken)
+        const response = await axios.post(
+            /*backend api*/
+            JSON.stringify({ fullname, email, hash}),{
+                headers: { 'Content-Type' : 'application/json'},
+                withCredentials: true
+            }
+        )
+        console.log(response.data)
+        console.log(response.accessToken)
         //clear input fields after submit
         setFullname('');
         setEmail('');

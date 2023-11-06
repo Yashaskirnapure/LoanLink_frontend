@@ -27,6 +27,7 @@ const Loans = () => {
       id: 1,
       title: 'Personal Loan',
       borrower: 'Yashas',
+      creditRating: 700,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -35,6 +36,7 @@ const Loans = () => {
       id: 2,
       title: 'Educational Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -43,6 +45,7 @@ const Loans = () => {
       id: 3,
       title: 'Personal Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -51,6 +54,7 @@ const Loans = () => {
       id: 4,
       title: 'Educational Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -59,6 +63,7 @@ const Loans = () => {
       id: 1,
       title: 'Personal Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -67,6 +72,7 @@ const Loans = () => {
       id: 2,
       title: 'Educational Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -75,6 +81,7 @@ const Loans = () => {
       id: 3,
       title: 'Personal Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -83,6 +90,7 @@ const Loans = () => {
       id: 4,
       title: 'Educational Loan',
       borrower: 'Yashas',
+      creditRating: 780,
       amount: 1000,
       term: '36 days',
       rate: 10
@@ -107,6 +115,7 @@ const Loans = () => {
               <Tr>
                 <Th>S.no.</Th>
                 <Th>Borrower</Th>
+                <Th>Credit Rating</Th>
                 <Th>Loan Title</Th>
                 <Th>Loan Amount</Th>
                 <Th>Loan Term</Th>
@@ -120,12 +129,13 @@ const Loans = () => {
                   <Tr>
                     <Td>{item.id}</Td>
                     <Td>{item.borrower}</Td>
+                    <Td>{item.creditRating}</Td>
                     <Td>{item.title}</Td>
                     <Td>{item.amount}</Td>
                     <Td>{item.term}</Td>
                     <Td>{item.rate}</Td>
                     <Td>
-                      <Button width={'130px'}>Accept</Button>
+                      <Button width={'130px'} colorScheme={'facebook'}>Accept</Button>
                     </Td>
                   </Tr>
                 )
