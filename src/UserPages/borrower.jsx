@@ -33,6 +33,7 @@ const Borrower = () => {
           h={[450, 550, 600]}
           w={[400, 500, 600]}
           borderRadius={40}
+          borderWidth={1}
           align={'center'}
           opacity={'50%'}
         >
@@ -53,7 +54,7 @@ const Borrower = () => {
 
             {/*profile pic*/}
             <Image
-              boxSize='150px'
+              boxSize={[100, 170, 200]}
               borderRadius={'50%'}
               src={profilePic} 
               alt='my-pfp'

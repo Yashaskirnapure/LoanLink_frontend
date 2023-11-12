@@ -12,7 +12,7 @@ const Login = () => {
   const toast = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState(null)
+  const [role, setRole] = useState(null);
   const navigate = useNavigate();
 
   const handeSubmit = async (e) => {

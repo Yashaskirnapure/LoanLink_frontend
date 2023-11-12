@@ -14,6 +14,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState({radioChecked : false});
+  const [aadhar, setAardhar] = useState('');
 
   const handeSubmit = async (e) => {
     e.preventDefault();
@@ -62,13 +63,26 @@ const Signup = () => {
         return;
     }
 
+    const AADHAR_REGEX = /^\d{12}$/;
+    if(!AADHAR_REGEX.test(password)){
+        toast({
+            title: 'Error',
+            description: "Enter valid Aadhar Number.",
+            status: 'error',
+            duration: 4000,
+            isClosable: true,
+        })
+        return;
+    }
+
     const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(password, salt);
+    const password_hash = bcrypt.hashSync(password, salt);
+    const aadhar_hash = bcrypt.hashSync(aadhar, salt);
 
     try {
         const response = await axios.post(
             /*backend api*/
-            JSON.stringify({ fullname, email, hash}),{
+            JSON.stringify({ fullname, email, password_hash, aadhar_hash}),{
                 headers: { 'Content-Type' : 'application/json'},
                 withCredentials: true
             }
@@ -127,6 +141,12 @@ const Signup = () => {
                         placeholder='Confirm Password'
                         value={confirmPassword}
                         onChange={(e) => {setConfirmPassword(e.target.value)}}
+                    />
+                    <input
+                        type="text"
+                        placeholder='Aadhar Number'
+                        value={aadhar}
+                        onChange={(e) => {aadhar(e.target.value)}}
                     />
                     <div className='role'
                         value={role}
