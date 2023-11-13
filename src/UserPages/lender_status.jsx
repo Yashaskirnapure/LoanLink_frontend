@@ -13,7 +13,10 @@ const LenderStatus = () => {
         <div className="status-page">
             <Card
               width={'70%'}
+              borderWidth={'1px'}
+              borderColor={'gray'}
               borderRadius={'30px'}
+              padding={8}
             >
               <CardHeader>
                 <Heading size='xl' textAlign={'center'}>Loan Status</Heading>

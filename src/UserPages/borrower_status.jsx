@@ -14,7 +14,9 @@ const BorrowerStatus = () => {
         <div className="status-page">
             <Card
               width={'70%'}
+              borderWidth={'1px'}
               borderRadius={'30px'}
+              padding={8}
             >
               <CardHeader>
                 <Heading size='xl' textAlign={'center'}>Loan Status</Heading>
@@ -65,7 +67,13 @@ const BorrowerStatus = () => {
                       300
                     </Text>
                   </Box>
-                  <Button margin={'auto'}>Make Repayment</Button>
+                  <Button
+                    margin={'auto'}
+                    width={'100%'}
+                    colorScheme={'facebook'}
+                  >
+                    Make Repayment
+                  </Button>
                 </Stack>
               </CardBody>
             </Card>

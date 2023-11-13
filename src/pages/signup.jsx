@@ -14,7 +14,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [role, setRole] = useState({radioChecked : false});
-  const [aadhar, setAardhar] = useState('');
+  const [upiId, setUpiId] = useState('');
 
   const handeSubmit = async (e) => {
     e.preventDefault();
@@ -63,11 +63,11 @@ const Signup = () => {
         return;
     }
 
-    const AADHAR_REGEX = /^\d{12}$/;
-    if(!AADHAR_REGEX.test(password)){
+    const UPI_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if(!UPI_REGEX.test(upiId)){
         toast({
             title: 'Error',
-            description: "Enter valid Aadhar Number.",
+            description: "Enter valid UPI ID.",
             status: 'error',
             duration: 4000,
             isClosable: true,
@@ -77,12 +77,11 @@ const Signup = () => {
 
     const salt = bcrypt.genSaltSync(10);
     const password_hash = bcrypt.hashSync(password, salt);
-    const aadhar_hash = bcrypt.hashSync(aadhar, salt);
 
     try {
         const response = await axios.post(
             /*backend api*/
-            JSON.stringify({ fullname, email, password_hash, aadhar_hash}),{
+            JSON.stringify({ fullname, email, password_hash, upiId}),{
                 headers: { 'Content-Type' : 'application/json'},
                 withCredentials: true
             }
@@ -94,6 +93,7 @@ const Signup = () => {
         setEmail('');
         setPassword('');
         setConfirmPassword('');
+        setUpiId('')
         setRole(null)
         toast({
             title: 'Registration Successful',
@@ -144,9 +144,9 @@ const Signup = () => {
                     />
                     <input
                         type="text"
-                        placeholder='Aadhar Number'
-                        value={aadhar}
-                        onChange={(e) => {aadhar(e.target.value)}}
+                        placeholder='UPI Id'
+                        value={upiId}
+                        onChange={(e) => {setUpiId(e.target.value)}}
                     />
                     <div className='role'
                         value={role}

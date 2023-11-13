@@ -152,7 +152,7 @@ const Addlisting = () => {
                   </NumberInput>
                   <InputRightAddon
                     width={'15%'}
-                    children='Years'
+                    children='Days'
                   />
                 </InputGroup> 
 
@@ -191,7 +191,7 @@ const Addlisting = () => {
                 <Button
                   type='submit'
                   width={'100%'} 
-                  colorScheme={'purple'}
+                  colorScheme={'facebook'}
                   onClick={handleSubmit}
                 >
                   Submit
